@@ -1,0 +1,20 @@
+{
+  "name": "de.lumpn.unity-discord",
+  "version": "1.0.0",
+  "displayName": "Lumpn Discord Webhooks",
+  "description": "Send messages to your Discord channel via webhooks.",
+  "unity": "2017.1",
+  "dependencies": {
+    "com.unity.ext.nunit": "1.0.0",
+    "com.unity.modules.unitywebrequestwww": "1.0.0"
+  },
+  "keywords": [
+    "lumpn",
+    "discord",
+    "webhook"
+  ],
+  "author": {
+    "name": "Jonas Boetel",
+    "url": "https://github.com/lumpn"
+  }
+}
