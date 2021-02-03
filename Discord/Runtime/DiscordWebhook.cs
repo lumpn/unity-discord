@@ -4,7 +4,7 @@
 //----------------------------------------
 using System;
 using System.Text;
-using Lumpn.Discord.Utils;
+using UnityEngine;
 using UnityEngine.Networking;
 
 namespace Lumpn.Discord
@@ -29,31 +29,16 @@ namespace Lumpn.Discord
             this.uri = uri;
         }
 
-        public UnityWebRequestAsyncOperation Send(string username, string message)
+        public UnityWebRequestAsyncOperation Send(Message message)
         {
-            var json = BuildJson(username, message);
+            var json = JsonUtility.ToJson(message);
+
             var uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(json));
             uploadHandler.contentType = "application/json";
 
             var request = new UnityWebRequest(uri, UnityWebRequest.kHttpVerbPOST, null, uploadHandler);
             var op = request.SendWebRequest();
             return op;
-        }
-
-        private string BuildJson(string username, string message)
-        {
-            stringBuilder.Clear();
-
-            stringBuilder.Append("{\"username\": \"");
-            JsonUtils.AppendJson(stringBuilder, username);
-            stringBuilder.Append("\", \"content\": \"");
-            JsonUtils.AppendJson(stringBuilder, message);
-            stringBuilder.Append("\"}");
-
-            var json = stringBuilder.ToString();
-            stringBuilder.Clear();
-
-            return json;
         }
     }
 }
