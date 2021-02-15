@@ -12,7 +12,15 @@ namespace Lumpn.Discord.Tests
     public sealed class ColorUtilsTest
     {
         [Test]
-        public void TestColorConversion()
+        public void TestColor32()
+        {
+            var color = new Color32(100, 100, 100, 0);
+            var code = ColorUtils.ToColorCode(color);
+            Assert.AreEqual(6579300, code);
+        }
+
+        [Test]
+        public void TestColor()
         {
             var cyan = ColorUtils.ToColorCode(Color.cyan);
             Assert.AreEqual(65535, cyan);
@@ -25,11 +33,10 @@ namespace Lumpn.Discord.Tests
         }
 
         [Test]
-        public void TestColor32Extension()
+        public void TestHTML()
         {
-            var color32 = new Color32(100, 100, 100, 0);
-            var code = color32.ToColorCode();
-            Assert.AreEqual(6579300, code);
+            var cyan = ColorUtils.ToColorCode("#00FFFF");
+            Assert.AreEqual(65535, cyan);
         }
     }
 }

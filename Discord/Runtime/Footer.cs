@@ -16,5 +16,10 @@ namespace Lumpn.Discord
         /// Text of the footer. (required)
         /// </summary>
         public string text;
+
+        /// <summary>
+        /// URL of the footer icon. (optional)
+        /// </summary>
+        public string icon_url;
     }
 }

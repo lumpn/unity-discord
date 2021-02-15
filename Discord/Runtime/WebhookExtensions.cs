@@ -4,11 +4,11 @@
 //----------------------------------------
 using UnityEngine.Networking;
 
-namespace Lumpn.Discord.Utils
+namespace Lumpn.Discord
 {
-    public static class DiscordWebhookExtensions
+    public static class WebhookExtensions
     {
-        public static UnityWebRequestAsyncOperation Send(this DiscordWebhook webhook, Embed embed)
+        public static UnityWebRequestAsyncOperation Send(this Webhook webhook, Embed embed)
         {
             var message = new Message
             {

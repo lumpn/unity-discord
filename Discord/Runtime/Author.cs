@@ -21,5 +21,10 @@ namespace Lumpn.Discord
         /// URL of the author icon. (optional)
         /// </summary>
         public string icon_url;
+
+        /// <summary>
+        /// URL of the author. (optional)
+        /// </summary>
+        public string url;
     }
 }

@@ -9,15 +9,13 @@ using UnityEngine.Networking;
 
 namespace Lumpn.Discord
 {
-    public sealed class DiscordWebhook
+    public sealed class Webhook
     {
-        private const string discordUrl = "https://discord.com/api/webhooks";
-
         private readonly Uri uri;
 
-        private DiscordWebhook(Uri uri)
+        public Webhook(string url)
         {
-            this.uri = uri;
+            this.uri = new Uri(url, UriKind.Absolute);
         }
 
         public UnityWebRequestAsyncOperation Send(Message message)
@@ -30,14 +28,6 @@ namespace Lumpn.Discord
             var request = new UnityWebRequest(uri, UnityWebRequest.kHttpVerbPOST, null, uploadHandler);
             var op = request.SendWebRequest();
             return op;
-        }
-
-        public static DiscordWebhook Create(string webhookId, string webhookToken)
-        {
-            var url = $"{discordUrl}/{webhookId}/{webhookToken}";
-            var uri = new Uri(url, UriKind.Absolute);
-
-            return new DiscordWebhook(uri);
         }
     }
 }

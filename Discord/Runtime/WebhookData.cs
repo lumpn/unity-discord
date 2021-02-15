@@ -7,17 +7,22 @@ using UnityEngine;
 namespace Lumpn.Discord
 {
     [CreateAssetMenu(menuName = "Data/Discord/DiscordWebhookData")]
-    public sealed class DiscordWebhookData : ScriptableObject
+    public sealed class WebhookData : ScriptableObject
     {
-        [Tooltip("Discord webhook id. Should be an 18 digit number.")]
-        [SerializeField] private string webhookId = "000000000000000000";
+        private const string discordUrl = "https://discord.com/api/webhooks";
 
-        [Tooltip("Discord webhook token. A long string of letters and numbers.")]
-        [SerializeField] private string webhookToken = "abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789____";
+        [Tooltip("Discord webhook URL.")]
+        [SerializeField] private string webhookUrl = "https://discord.com/api/webhooks/000000000000000000/abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789____";
 
-        public DiscordWebhook CreateWebhook()
+        public Webhook CreateWebhook()
         {
-            return DiscordWebhook.Create(webhookId, webhookToken);
+            return new Webhook(webhookUrl);
+        }
+
+        [ContextMenu("Send test message")]
+        private void SendTestMessage()
+        {
+
         }
     }
 }

@@ -1,16 +1,20 @@
-# Matomo Analytics
-[Matomo Analytics](https://matomo.org) for Unity.
+# unity-discord
+Send messages to your [Discord](https://discord.com) channel via [webhooks](https://discord.com/developers/docs/resources/webhook).
+
+## Installation
+Download the entire repository from https://github.com/lumpn/unity-discord and use Unity's built in package manager to [Add package from disk](https://docs.unity3d.com/Manual/upm-ui-local.html).
 
 ## Usage
 ```csharp
-    public MatomoTrackerData trackerData;
+    public DiscordWebhookData webhookData;
 
     void Start()
     {
-        var tracker = trackerData.CreateTracker();
-        var session = tracker.CreateSession("user id here");
+        var webhook = webhookData.CreateWebhook();
 
-        session.Record("MyGameEvent");
-        session.Record("AnotherGameEvent");
+        webhook.Send("Alice", "Hello World!");
     }
 ```
+
+## Notes
+* See `Demo` project for details.
