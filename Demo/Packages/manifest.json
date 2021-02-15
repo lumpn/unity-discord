@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "com.unity.test-framework": "1.1.22",
+    "de.lumpn.unity-discord": "file:../../Discord"
+  }
+}
