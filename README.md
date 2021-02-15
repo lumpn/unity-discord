@@ -11,7 +11,7 @@ Download the entire repository from https://github.com/lumpn/unity-discord and u
     void Start()
     {
         var webhook = webhookData.CreateWebhook();
-        webhook.Send("Alice", "Hello World!");
+        webhook.Send("Hello World!");
     }
 ```
 
