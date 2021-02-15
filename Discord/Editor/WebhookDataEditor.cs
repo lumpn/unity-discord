@@ -39,10 +39,11 @@ namespace Lumpn.Discord
                 .SetColor("#0099ff")
                 .SetTitle("Some title")
                 .SetAuthor("Some name", "https://i.imgur.com/wSTFkRM.png", "https://discord.js.org")
-                .SetDescription("Some description here")
+                .SetDescription("Some description here. There can be a lot of text.")
                 .SetThumbnail("https://i.imgur.com/wSTFkRM.png")
                 .AddField("Regular field title", "Some value here", false)
-                .AddField("\u200B", "\u200B", false)
+                .AddField("Inline field title", "Some value here")
+                .AddField("Inline field title", "Some value here")
                 .AddField("Inline field title", "Some value here")
                 .SetFooter("Some footer text here", "https://i.imgur.com/wSTFkRM.png");
         }

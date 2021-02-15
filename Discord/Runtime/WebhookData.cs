@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Lumpn.Discord
 {
-    [CreateAssetMenu(menuName = "Data/Discord/DiscordWebhookData")]
+    [CreateAssetMenu(menuName = "Data/Discord/WebhookData")]
     public sealed class WebhookData : ScriptableObject
     {
         private const string discordUrl = "https://discord.com/api/webhooks";
