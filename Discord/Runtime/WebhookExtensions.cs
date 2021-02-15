@@ -17,5 +17,11 @@ namespace Lumpn.Discord
 
             return webhook.Send(message);
         }
+
+        public static UnityWebRequestAsyncOperation Send(this Webhook webhook, string text)
+        {
+            var message = new Message { content = text };
+            return webhook.Send(message);
+        }
     }
 }

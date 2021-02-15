@@ -1,3 +1,7 @@
+//----------------------------------------
+// MIT License
+// Copyright(c) 2021 Jonas Boetel
+//---------------------------------------- 
 using UnityEditor;
 using UnityEngine;
 
