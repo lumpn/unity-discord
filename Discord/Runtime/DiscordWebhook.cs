@@ -13,16 +13,7 @@ namespace Lumpn.Discord
     {
         private const string discordUrl = "https://discord.com/api/webhooks";
 
-        private readonly StringBuilder stringBuilder = new StringBuilder();
         private readonly Uri uri;
-
-        public static DiscordWebhook Create(string webhookId, string webhookToken)
-        {
-            var url = $"{discordUrl}/{webhookId}/{webhookToken}";
-            var uri = new Uri(url, UriKind.Absolute);
-
-            return new DiscordWebhook(uri);
-        }
 
         private DiscordWebhook(Uri uri)
         {
@@ -39,6 +30,14 @@ namespace Lumpn.Discord
             var request = new UnityWebRequest(uri, UnityWebRequest.kHttpVerbPOST, null, uploadHandler);
             var op = request.SendWebRequest();
             return op;
+        }
+
+        public static DiscordWebhook Create(string webhookId, string webhookToken)
+        {
+            var url = $"{discordUrl}/{webhookId}/{webhookToken}";
+            var uri = new Uri(url, UriKind.Absolute);
+
+            return new DiscordWebhook(uri);
         }
     }
 }

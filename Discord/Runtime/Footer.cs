@@ -6,9 +6,15 @@ using System;
 
 namespace Lumpn.Discord
 {
+    /// <summary>
+    /// https://discord.com/developers/docs/resources/channel#embed-object-embed-footer-structure
+    /// </summary>
     [Serializable]
     public struct Footer
     {
+        /// <summary>
+        /// Text of the footer. (required)
+        /// </summary>
         public string text;
     }
 }
