@@ -27,29 +27,44 @@ namespace Lumpn.Discord
                 Application.OpenURL(documentationUrl);
             }
 
-            if (GUILayout.Button("Send test message"))
+            EditorGUILayout.Separator();
+            EditorGUILayout.LabelField("Test the webhook URL");
+
+            if (GUILayout.Button("Send plain text message"))
             {
-                var embed = CreateTestMessage();
+                var webhook = data.CreateWebhook();
+                webhook.Send("Plain text message here.");
+            }
+
+            if (GUILayout.Button("Send simple embed message"))
+            {
+                var embed = new Embed()
+                    .SetColor("#0099ff")
+                    .SetDescription("Simple embed message with a colored border.");
+
+                var webhook = data.CreateWebhook();
+                webhook.Send(embed);
+            }
+
+            if (GUILayout.Button("Send fancy embed message"))
+            {
+                var embed = new Embed()
+                    .SetColor("#0099ff")
+                    .SetTitle("Some title")
+                    .SetAuthor("Some name", "https://i.imgur.com/wSTFkRM.png", "https://discord.js.org")
+                    .SetDescription("Some description here. There can be a lot of text.")
+                    .SetThumbnail("https://i.imgur.com/wSTFkRM.png")
+                    .AddField("Regular field title", "Some value here", false)
+                    .AddField("Inline field title", "Some value here")
+                    .AddField("Inline field title", "Some value here")
+                    .AddField("Inline field title", "Some value here")
+                    .SetFooter("Some footer text here", "https://i.imgur.com/wSTFkRM.png");
+
                 var webhook = data.CreateWebhook();
                 webhook.Send(embed);
             }
 
             EditorGUILayout.EndVertical();
-        }
-
-        private static Embed CreateTestMessage()
-        {
-            return new Embed()
-                .SetColor("#0099ff")
-                .SetTitle("Some title")
-                .SetAuthor("Some name", "https://i.imgur.com/wSTFkRM.png", "https://discord.js.org")
-                .SetDescription("Some description here. There can be a lot of text.")
-                .SetThumbnail("https://i.imgur.com/wSTFkRM.png")
-                .AddField("Regular field title", "Some value here", false)
-                .AddField("Inline field title", "Some value here")
-                .AddField("Inline field title", "Some value here")
-                .AddField("Inline field title", "Some value here")
-                .SetFooter("Some footer text here", "https://i.imgur.com/wSTFkRM.png");
         }
     }
 }
