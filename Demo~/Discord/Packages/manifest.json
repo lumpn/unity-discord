@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "de.lumpn.unity-discord": "file:../../../"
+  }
+}

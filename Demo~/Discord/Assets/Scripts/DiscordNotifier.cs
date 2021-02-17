@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Lumpn.Discord.Demo
 {
-    [AddComponentMenu("")]
     public sealed class DiscordNotifier : MonoBehaviour
     {
         [SerializeField] private WebhookData webhookData;
@@ -10,7 +9,12 @@ namespace Lumpn.Discord.Demo
         void Start()
         {
             var webhook = webhookData.CreateWebhook();
-            webhook.Send("Starting a new game");
+
+            var embed = new Embed()
+                .SetColor("#0099ff")
+                .SetDescription("Starting a new game");
+
+            webhook.Send(embed);
         }
     }
 }
