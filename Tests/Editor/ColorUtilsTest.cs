@@ -1,7 +1,7 @@
 //----------------------------------------
 // MIT License
 // Copyright(c) 2021 Jonas Boetel
-//---------------------------------------- 
+//----------------------------------------
 using Lumpn.Discord.Utils;
 using NUnit.Framework;
 using UnityEngine;
