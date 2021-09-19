@@ -1,3 +1,7 @@
+//----------------------------------------
+// MIT License
+// Copyright(c) 2021 Jonas Boetel
+//----------------------------------------
 using Lumpn.Discord.Utils;
 using UnityEngine;
 using System;
@@ -54,10 +58,6 @@ namespace Lumpn.Discord
             Array.Resize(ref embed.fields, len + 1);
             embed.fields[len] = new Field { name = name, value = value, inline = inline };
             return embed;
-        }
-
-        public static void test()
-        {
         }
     }
 }

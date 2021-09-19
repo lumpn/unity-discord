@@ -8,26 +8,19 @@ using UnityEngine;
 namespace Lumpn.Discord
 {
     [CustomEditor(typeof(WebhookData))]
-    public sealed class WebhookDataEditor : Editor
+    public sealed class WebhookDataEditor : Editor<WebhookData>
     {
         private const string documentationUrl = "https://discordjs.guide/popular-topics/embeds.html";
 
-        public override void OnInspectorGUI()
+        public override void OnInspectorGUI(WebhookData data)
         {
-            base.OnInspectorGUI();
-
-            var data = (WebhookData)target;
-
-            EditorGUILayout.Separator();
-            EditorGUILayout.BeginVertical(GUI.skin.box);
-
             EditorGUILayout.HelpBox("Please see Discord's documentation for details on how to use embeds.", MessageType.Info);
             if (GUILayout.Button("Open documentation"))
             {
                 Application.OpenURL(documentationUrl);
             }
-
             EditorGUILayout.Separator();
+
             EditorGUILayout.LabelField("Test the webhook URL");
 
             if (GUILayout.Button("Send plain text message"))
@@ -63,8 +56,6 @@ namespace Lumpn.Discord
                 var webhook = data.CreateWebhook();
                 webhook.Send(embed);
             }
-
-            EditorGUILayout.EndVertical();
         }
     }
 }

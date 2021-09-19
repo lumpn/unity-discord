@@ -22,8 +22,10 @@ namespace Lumpn.Discord
         {
             var json = JsonUtility.ToJson(message);
 
-            var uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(json));
-            uploadHandler.contentType = "application/json";
+            var uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(json))
+            {
+                contentType = "application/json",
+            };
 
             var request = new UnityWebRequest(uri, UnityWebRequest.kHttpVerbPOST, null, uploadHandler);
             var op = request.SendWebRequest();

@@ -1,7 +1,7 @@
 {
   "name": "de.lumpn.unity-discord",
-  "version": "1.0.3",
-  "displayName": "Lumpn Discord Webhooks",
+  "version": "1.0.4",
+  "displayName": "Discord Webhooks",
   "description": "Send messages to your Discord channel via webhooks.",
   "dependencies": {
     "com.unity.ext.nunit": "1.0.0",

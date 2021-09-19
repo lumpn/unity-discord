@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Lumpn.Discord
 {
+    [HelpURL("https://discordjs.guide/popular-topics/embeds.html")]
     [CreateAssetMenu(menuName = "Data/Discord/WebhookData")]
     public sealed class WebhookData : ScriptableObject
     {
@@ -17,12 +18,6 @@ namespace Lumpn.Discord
         public Webhook CreateWebhook()
         {
             return new Webhook(webhookUrl);
-        }
-
-        [ContextMenu("Send test message")]
-        private void SendTestMessage()
-        {
-
         }
     }
 }
