@@ -46,6 +46,18 @@ namespace Lumpn.Discord
             return embed;
         }
 
+        public static Embed SetImage(this Embed embed, string url)
+        {
+            embed.image = new Image { url = url };
+            return embed;
+        }
+
+        public static Embed SetVideo(this Embed embed, string url)
+        {
+            embed.video = new Video { url = url };
+            return embed;
+        }
+
         public static Embed SetFooter(this Embed embed, string text, string icon_url = null)
         {
             embed.footer = new Footer { text = text, icon_url = icon_url };

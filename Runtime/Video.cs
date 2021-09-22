@@ -16,20 +16,5 @@ namespace Lumpn.Discord
         /// Source URL of the video. (required)
         /// </summary>
         public string url;
-
-        /// <summary>
-        /// Proxied URL of the video. (optional)
-        /// </summary>
-        public string proxy_url;
-
-        /// <summary>
-        /// Height of the video. (optional)
-        /// </summary>
-        public int height;
-
-        /// <summary>
-        /// Width of the video. (optional)
-        /// </summary>
-        public int width;
     }
 }

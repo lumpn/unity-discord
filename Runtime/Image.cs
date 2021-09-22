@@ -16,20 +16,5 @@ namespace Lumpn.Discord
         /// Source URL of the image. (required)
         /// </summary>
         public string url;
-
-        /// <summary>
-        /// Proxied URL of the image. (optional)
-        /// </summary>
-        public string proxy_url;
-
-        /// <summary>
-        /// Height of the image. (optional)
-        /// </summary>
-        public int height;
-
-        /// <summary>
-        /// Width of the image. (optional)
-        /// </summary>
-        public int width;
     }
 }
