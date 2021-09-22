@@ -22,6 +22,8 @@ namespace Lumpn.Discord
         /// </summary>
         public string description;
 
+        public string url;
+
         /// <summary>
         /// Border color code. (required)
         /// </summary>
@@ -37,6 +39,10 @@ namespace Lumpn.Discord
         /// Thumbnail. (optional)
         /// </summary>
         public Thumbnail thumbnail;
+
+        public Image image;
+        public Video video;
+        public Provider provider;
 
         /// <summary>
         /// Footer. (optional)
