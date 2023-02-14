@@ -12,10 +12,12 @@ namespace Lumpn.Discord
     public sealed class Webhook
     {
         private readonly Uri uri;
+        public readonly string name;
 
-        public Webhook(string url)
+        public Webhook(string url, string name)
         {
             this.uri = new Uri(url, UriKind.Absolute);
+            this.name = name;
         }
 
         public UnityWebRequest CreateWebRequest(Message message)

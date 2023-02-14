@@ -13,9 +13,12 @@ namespace Lumpn.Discord
         [Tooltip("Discord webhook URL. https://discord.com/api/webhooks/000000000000000000/abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789____")]
         [SerializeField] private string webhookUrl;
 
+        [Tooltip("Optional user name override")]
+        [SerializeField] private string webhookName;
+
         public Webhook CreateWebhook()
         {
-            return new Webhook(webhookUrl);
+            return new Webhook(webhookUrl, webhookName);
         }
     }
 }

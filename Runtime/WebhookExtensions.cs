@@ -13,6 +13,7 @@ namespace Lumpn.Discord
         {
             var message = new Message
             {
+                username = webhook.name,
                 content = text,
             };
 
@@ -23,6 +24,7 @@ namespace Lumpn.Discord
         {
             var message = new Message
             {
+                username = webhook.name,
                 embeds = new[] { embed },
             };
 
