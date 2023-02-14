@@ -6,12 +6,10 @@ using UnityEngine;
 
 namespace Lumpn.Discord
 {
-    [HelpURL("https://discordjs.guide/popular-topics/embeds.html")]
+    [HelpURL("https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks")]
     [CreateAssetMenu(menuName = "Data/Discord/WebhookData")]
     public sealed class WebhookData : ScriptableObject
     {
-        private const string discordUrl = "https://discord.com/api/webhooks";
-
         [Tooltip("Discord webhook URL.")]
         [SerializeField] private string webhookUrl = "https://discord.com/api/webhooks/000000000000000000/abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789____";
 

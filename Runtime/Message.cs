@@ -18,7 +18,7 @@ namespace Lumpn.Discord
         public string username;
 
         /// <summary>
-        /// Overrides the avatar of the webhoook. Recommended to leave blank. (optional)
+        /// Overrides the avatar of the webhook. Recommended to leave blank. (optional)
         /// </summary>
         public string avatar_url;
 

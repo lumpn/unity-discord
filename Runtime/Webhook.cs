@@ -18,18 +18,18 @@ namespace Lumpn.Discord
             this.uri = new Uri(url, UriKind.Absolute);
         }
 
-        public UnityWebRequestAsyncOperation Send(Message message)
+        public UnityWebRequest CreateWebRequest(Message message)
         {
             var json = JsonUtility.ToJson(message);
 
+            var downloadHandler = new DownloadHandlerBuffer();
             var uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(json))
             {
                 contentType = "application/json",
             };
 
-            var request = new UnityWebRequest(uri, UnityWebRequest.kHttpVerbPOST, null, uploadHandler);
-            var op = request.SendWebRequest();
-            return op;
+            var request = new UnityWebRequest(uri, UnityWebRequest.kHttpVerbPOST, downloadHandler, uploadHandler);
+            return request;
         }
     }
 }
