@@ -23,7 +23,6 @@ namespace Lumpn.Discord
         {
             var message = new Message
             {
-                username = "foo",
                 embeds = new[] { embed },
             };
 
