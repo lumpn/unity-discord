@@ -23,6 +23,7 @@ namespace Lumpn.Discord
         {
             var message = new Message
             {
+                username = "foo",
                 embeds = new[] { embed },
             };
 
@@ -35,7 +36,7 @@ namespace Lumpn.Discord
             {
                 yield return request.SendWebRequest();
 
-                Debug.Assert(!request.isHttpError, request.error);
+                Debug.AssertFormat(!request.isHttpError, "{0}: {1}", request.error, request.downloadHandler.text);
             }
         }
     }

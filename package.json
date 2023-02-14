@@ -21,6 +21,10 @@
     {
       "displayName": "Usage Samples",
       "path": "Samples~/UsageSamples"
+    },
+    {
+      "displayName": "Testing Samples",
+      "path": "Samples~/TestingSamples"
     }
   ]
 }
