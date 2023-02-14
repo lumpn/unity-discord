@@ -16,5 +16,11 @@
   "author": {
     "name": "Jonas Boetel",
     "url": "https://github.com/lumpn"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Usage Samples",
+      "path": "Samples~/UsageSamples"
+    }
+  ]
 }
