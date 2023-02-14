@@ -9,19 +9,23 @@ namespace Lumpn.Discord
 {
     public static class WebhookExtensions
     {
-        public static IEnumerator Send(this Webhook webhook, Embed embed)
+        public static IEnumerator Send(this Webhook webhook, string text)
         {
             var message = new Message
             {
-                embeds = new[] { embed }
+                content = text,
             };
 
             return webhook.Send(message);
         }
 
-        public static IEnumerator Send(this Webhook webhook, string text)
+        public static IEnumerator Send(this Webhook webhook, Embed embed)
         {
-            var message = new Message { content = text };
+            var message = new Message
+            {
+                embeds = new[] { embed },
+            };
+
             return webhook.Send(message);
         }
 

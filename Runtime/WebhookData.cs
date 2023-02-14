@@ -10,8 +10,8 @@ namespace Lumpn.Discord
     [CreateAssetMenu(menuName = "Data/Discord/WebhookData")]
     public sealed class WebhookData : ScriptableObject
     {
-        [Tooltip("Discord webhook URL.")]
-        [SerializeField] private string webhookUrl = "https://discord.com/api/webhooks/000000000000000000/abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789____";
+        [Tooltip("Discord webhook URL. https://discord.com/api/webhooks/000000000000000000/abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789____")]
+        [SerializeField] private string webhookUrl;
 
         public Webhook CreateWebhook()
         {
