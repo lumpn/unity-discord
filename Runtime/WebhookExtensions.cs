@@ -37,7 +37,7 @@ namespace Lumpn.Discord
             {
                 yield return request.SendWebRequest();
 
-                Debug.AssertFormat(!request.isHttpError, "{0}: {1}", request.error, request.downloadHandler.text);
+                Debug.AssertFormat(request.responseCode < 300, "{0}: {1}", request.error, request.downloadHandler.text);
             }
         }
     }
