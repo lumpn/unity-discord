@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb0865a39cbf5640832c456fc31fd59, type: 3}
   m_Name: WebhookData
   m_EditorClassIdentifier: 
-  webhookUrl: https://discord.com/api/webhooks/000000000000000000/abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789____
+  webhookUrl: 
