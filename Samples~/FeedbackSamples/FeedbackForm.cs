@@ -14,7 +14,6 @@ namespace Lumpn.Discord.Samples
         {
             public string name;
             public Color color;
-            public string iconUrl;
         }
 
         [Header("UI")]
@@ -50,8 +49,8 @@ namespace Lumpn.Discord.Samples
             var message = inputField.text;
 
             var embed = new Embed()
+                .SetTitle(type.name)
                 .SetColor(type.color)
-                .SetAuthor(type.name, type.iconUrl)
                 .SetDescription(message);
 
             StartCoroutine(webhook.Send(embed));
