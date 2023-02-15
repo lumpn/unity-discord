@@ -19,7 +19,11 @@
   },
   "samples": [
     {
-      "displayName": "Usage Samples",
+      "displayName": "Feedback Form Samples",
+      "path": "Samples~/FeedbackSamples"
+    },
+    {
+      "displayName": "Webhook Samples",
       "path": "Samples~/UsageSamples"
     },
     {
