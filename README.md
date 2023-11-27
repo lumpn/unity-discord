@@ -16,7 +16,7 @@ Download the entire repository from https://github.com/lumpn/unity-discord and u
 ```
 
 ## Creating a webhook
-Follow Discord's guide to [creating a webhook in Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks), the copy the webhook URL, create a `WebhookData` asset, and paste the webhook URL into the `WebhookData` asset.
+Follow Discord's guide to [creating a webhook in Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks), then copy the webhook URL, create a `WebhookData` asset, and paste the webhook URL into the `WebhookData` asset.
 
 ![Copy Webhook URL](https://support.discord.com/hc/article_attachments/360101553853/Screen_Shot_2020-12-15_at_4.51.38_PM.png)
 
