@@ -3,6 +3,7 @@
 // Copyright(c) 2021 Jonas Boetel
 //----------------------------------------
 using System;
+using System.Collections.Generic;
 
 namespace Lumpn.Discord
 {
@@ -26,5 +27,13 @@ namespace Lumpn.Discord
         /// URL of the author. (optional)
         /// </summary>
         public string url;
+
+        [NonSerialized] public ImageData icon;
+
+        internal Author Bake(List<ImageData> outImages)
+        {
+            icon_url = ImageDataUtils.Bake(icon_url, icon, outImages);
+            return this;
+        }
     }
 }

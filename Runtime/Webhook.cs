@@ -25,16 +25,14 @@ namespace Lumpn.Discord
 
         public UnityWebRequest CreateWebRequest(Message message)
         {
-            var json = JsonUtility.ToJson(message);
+            var buffer = new List<ImageData>();
+            var bakedMessage = message.Bake(buffer);
 
-            var downloadHandler = new DownloadHandlerBuffer();
-            var uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(json))
-            {
-                contentType = "application/json",
-            };
+            var sections = new List<IMultipartFormSection>();
+            sections.Add(CreateDataSection(bakedMessage));
+            sections.AddRange(buffer.Select(CreateFileSection));
 
-            var request = new UnityWebRequest(uri, UnityWebRequest.kHttpVerbPOST, downloadHandler, uploadHandler);
-            return request;
+            return UnityWebRequest.Post(uri, sections);
         }
 
         public UnityWebRequest CreateWebRequest(Message message, byte[] attachmentBytes)
@@ -42,7 +40,7 @@ namespace Lumpn.Discord
             var sections = new List<IMultipartFormSection>
             {
                 CreateDataSection(message),
-                CreateFileSection(attachmentBytes,0),
+                CreateFileSection(attachmentBytes, 0),
             };
 
             return UnityWebRequest.Post(uri, sections);
@@ -69,6 +67,11 @@ namespace Lumpn.Discord
         {
             var name = string.Format(CultureInfo.InvariantCulture, "files[{0}]", index);
             return new MultipartFormFileSection(name, bytes, null, "application/octet-stream");
+        }
+
+        private static MultipartFormFileSection CreateFileSection(ImageData image, int index)
+        {
+            return CreateFileSection(image.bytes, index);
         }
     }
 }

@@ -14,14 +14,16 @@ namespace Lumpn.Discord.Samples
 
         [Header("Message")]
         [SerializeField] private string text;
-        [SerializeField] private TextAsset image;
+        [SerializeField] private TextAsset image1;
+        [SerializeField] private TextAsset image2;
 
         public IEnumerator Run()
         {
-            var img = AttachedImage.Create(MediaType.PNG, image.bytes);
+            var img1 = ImageData.Create(MediaType.PNG, image1.bytes);
+            var img2 = ImageData.Create(MediaType.PNG, image2.bytes);
 
             var webhook = webhookData.CreateWebhook();
-            return webhook.Send(text, img);
+            return webhook.Send(text, new[] { img1, img2 });
         }
     }
 }

@@ -4,6 +4,7 @@
 //----------------------------------------
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Lumpn.Discord.Samples
 {
@@ -17,7 +18,8 @@ namespace Lumpn.Discord.Samples
         [SerializeField] private string title;
         [SerializeField] private string author;
         [SerializeField, TextArea] private string description;
-        [SerializeField] private string imageUrl;
+        [SerializeField] private TextAsset image;
+        [SerializeField] private string thumbnailUrl;
         [SerializeField] private string footer;
 
         public IEnumerator Run()
@@ -25,10 +27,11 @@ namespace Lumpn.Discord.Samples
             var embed = new Embed()
                     .SetColor(color)
                     .SetTitle(title)
-                    .SetAuthor(author, imageUrl)
+                    .SetAuthor(author, thumbnailUrl)
                     .SetDescription(description)
-                    .SetThumbnail(imageUrl)
-                    .SetFooter(footer, imageUrl);
+                    .SetThumbnail(thumbnailUrl)
+                    .SetImage(MediaType.PNG, image.bytes)
+                    .SetFooter(footer, thumbnailUrl);
 
             var webhook = webhookData.CreateWebhook();
             return webhook.Send(embed);

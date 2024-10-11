@@ -3,6 +3,7 @@
 // Copyright(c) 2021 Jonas Boetel
 //----------------------------------------
 using System;
+using System.Collections.Generic;
 
 namespace Lumpn.Discord
 {
@@ -21,5 +22,13 @@ namespace Lumpn.Discord
         /// URL of the footer icon. (optional)
         /// </summary>
         public string icon_url;
+
+        [NonSerialized] public ImageData icon;
+
+        internal Footer Bake(List<ImageData> outImages)
+        {
+            icon_url = ImageDataUtils.Bake(icon_url, icon, outImages);
+            return this;
+        }
     }
 }

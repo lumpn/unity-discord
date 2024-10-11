@@ -3,6 +3,7 @@
 // Copyright(c) 2021 Jonas Boetel
 //----------------------------------------
 using System;
+using System.Collections.Generic;
 
 namespace Lumpn.Discord
 {
@@ -57,5 +58,14 @@ namespace Lumpn.Discord
         /// Additional fields. (optional)
         /// </summary>
         public Field[] fields;
+
+        public Embed Bake(List<ImageData> outImages)
+        {
+            author = author.Bake(outImages);
+            thumbnail = thumbnail.Bake(outImages);
+            image = image.Bake(outImages);
+            footer = footer.Bake(outImages);
+            return this;
+        }
     }
 }
