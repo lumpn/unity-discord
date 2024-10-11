@@ -46,6 +46,12 @@ namespace Lumpn.Discord
             return embed;
         }
 
+        public static Embed SetThumbnail(this Embed embed, MediaType imageType, byte[] imageBytes)
+        {
+            embed.thumbnail.image = ImageData.Create(imageType, imageBytes);
+            return embed;
+        }
+
         public static Embed SetImage(this Embed embed, string url)
         {
             embed.image = new Image { url = url };

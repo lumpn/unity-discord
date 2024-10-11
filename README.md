@@ -6,13 +6,13 @@ Download the entire repository from https://github.com/lumpn/unity-discord and u
 
 ## Usage
 ```csharp
-    public WebhookData webhookData;
+public WebhookData webhookData;
 
-    void Start()
-    {
-        var webhook = webhookData.CreateWebhook();
-        webhook.Send("Hello World!");
-    }
+IEnumerator Start()
+{
+    var webhook = webhookData.CreateWebhook();
+    return webhook.Send("Hello, World!");
+}
 ```
 
 ## Creating a webhook
@@ -21,4 +21,25 @@ Follow Discord's guide to [creating a webhook in Discord](https://support.discor
 ![Copy Webhook URL](https://support.discord.com/hc/article_attachments/360101553853/Screen_Shot_2020-12-15_at_4.51.38_PM.png)
 
 ## Samples
-See `Samples` for details.
+Samples are included in the package. Install them via Unity's package manager.
+
+```csharp
+public WebhookData webhookData;
+
+IEnumerator Start()
+{
+  var embed = new Embed()
+      .SetColor(color)
+      .SetTitle(title)
+      .SetAuthor(author, authorIconUrl)
+      .SetDescription(description)
+      .SetThumbnail(thumbnailUrl)
+      .SetImage(MediaType.PNG, imageBytes)
+      .SetFooter(footer, footerIconUrl);
+
+  var webhook = webhookData.CreateWebhook();
+  return webhook.Send(embed);
+}
+```
+
+![Unity Discord](https://github.com/user-attachments/assets/7604288f-a4f0-4311-80d4-c8a5e8481593)

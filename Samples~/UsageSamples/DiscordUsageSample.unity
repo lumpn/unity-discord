@@ -250,14 +250,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   webhookData: {fileID: 11400000, guid: c6d7c6f7ec2d5214a8f471ad3fcf4b08, type: 2}
   color: {r: 0.9, g: 0.65999997, b: 0.17999998, a: 1}
-  title: Hello World!
+  title: Hello, World!
   author: Alice
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
   image: {fileID: 4900000, guid: 1f075d0f60fda714ca266d7d7c26305e, type: 3}
   thumbnailUrl: https://i.imgur.com/wSTFkRM.png
   footer: 'PS: Hi Bob!'
