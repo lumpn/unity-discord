@@ -13,7 +13,7 @@ namespace Lumpn.Discord
     public struct Message
     {
         /// <summary>
-        /// Overrides the username of the webhook. Recommended to leave blank. (optional)
+        /// Overrides the username of the webhook. (required)
         /// </summary>
         public string username;
 
@@ -31,5 +31,10 @@ namespace Lumpn.Discord
         /// Embedded messages. (optional)
         /// </summary>
         public Embed[] embeds;
+
+        /// <summary>
+        /// Attachments. (optional)
+        /// </summary>
+        public Attachment[] attachments;
     }
 }
