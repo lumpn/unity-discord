@@ -248,10 +248,10 @@ MonoBehaviour:
     embeds: []
     attachments:
     - id: 0
-      filename: example.png
+      filename: test.png
       description: 
       content_type: image/png
-  image: {fileID: 4900000, guid: 8401ec55686c391419f0f701838163b3, type: 3}
+  image: {fileID: 4900000, guid: f0375a16ddae7ab41ba10fa660918c91, type: 3}
 --- !u!4 &977768927
 Transform:
   m_ObjectHideFlags: 0
