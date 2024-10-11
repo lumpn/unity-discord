@@ -4,6 +4,7 @@
 //----------------------------------------
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace Lumpn.Discord
 {
@@ -36,9 +37,34 @@ namespace Lumpn.Discord
             using (var request = webhook.CreateWebRequest(message))
             {
                 yield return request.SendWebRequest();
-
-                Debug.AssertFormat(request.responseCode < 300, "{0}: {1}", request.error, request.downloadHandler.text);
+                CheckResponse(request);
             }
+        }
+
+        public static IEnumerator Send(this Webhook webhook, AttachedImage image)
+        {
+            return Send(webhook, string.Empty, image);
+        }
+
+        public static IEnumerator Send(this Webhook webhook, string text, AttachedImage image)
+        {
+            var message = new Message
+            {
+                username = webhook.name,
+                content = text,
+                attachments = new[] { image.CreateAttachment(0) },
+            };
+
+            using (var request = webhook.CreateWebRequest(message, image.bytes))
+            {
+                yield return request.SendWebRequest();
+                CheckResponse(request);
+            }
+        }
+
+        private static void CheckResponse(UnityWebRequest request)
+        {
+            Debug.AssertFormat(request.responseCode < 300, "{0}: {1}", request.error, request.downloadHandler.text);
         }
     }
 }
