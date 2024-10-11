@@ -15,12 +15,13 @@ namespace Lumpn.Discord.Samples
 
         [Header("Testing")]
         [SerializeField] private Message message;
+        [SerializeField] private TextAsset image;
 
         public IEnumerator Run()
         {
             var webhook = webhookData.CreateWebhook();
 
-            using (var request = webhook.CreateWebRequest(message))
+            using (var request = webhook.CreateWebRequest(message, image.bytes))
             {
                 yield return request.SendWebRequest();
 
