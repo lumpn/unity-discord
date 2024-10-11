@@ -59,7 +59,7 @@ namespace Lumpn.Discord
         /// </summary>
         public Field[] fields;
 
-        public Embed Bake(List<ImageData> outImages)
+        internal Embed Bake(List<ImageData> outImages)
         {
             author = author.Bake(outImages);
             thumbnail = thumbnail.Bake(outImages);

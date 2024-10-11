@@ -246,12 +246,7 @@ MonoBehaviour:
       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
       in culpa qui officia deserunt mollit anim id est laborum.
     embeds: []
-    attachments:
-    - id: 0
-      filename: test.png
-      description: 
-      content_type: image/png
-  image: {fileID: 4900000, guid: f0375a16ddae7ab41ba10fa660918c91, type: 3}
+    attachments: []
 --- !u!4 &977768927
 Transform:
   m_ObjectHideFlags: 0

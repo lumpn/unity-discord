@@ -35,43 +35,16 @@ namespace Lumpn.Discord
             return UnityWebRequest.Post(uri, sections);
         }
 
-        public UnityWebRequest CreateWebRequest(Message message, byte[] attachmentBytes)
-        {
-            var sections = new List<IMultipartFormSection>
-            {
-                CreateDataSection(message),
-                CreateFileSection(attachmentBytes, 0),
-            };
-
-            return UnityWebRequest.Post(uri, sections);
-        }
-
-        public UnityWebRequest CreateWebRequest(Message message, IEnumerable<byte[]> multipleAttachmentBytes)
-        {
-            var sections = new List<IMultipartFormSection>
-            {
-                CreateDataSection(message),
-            };
-            sections.AddRange(multipleAttachmentBytes.Select(CreateFileSection));
-
-            return UnityWebRequest.Post(uri, sections);
-        }
-
         private static MultipartFormDataSection CreateDataSection(Message message)
         {
             var json = JsonUtility.ToJson(message);
             return new MultipartFormDataSection("payload_json", json, Encoding.UTF8, "application/json");
         }
 
-        private static MultipartFormFileSection CreateFileSection(byte[] bytes, int index)
-        {
-            var name = string.Format(CultureInfo.InvariantCulture, "files[{0}]", index);
-            return new MultipartFormFileSection(name, bytes, null, "application/octet-stream");
-        }
-
         private static MultipartFormFileSection CreateFileSection(ImageData image, int index)
         {
-            return CreateFileSection(image.bytes, index);
+            var name = string.Format(CultureInfo.InvariantCulture, "files[{0}]", index);
+            return new MultipartFormFileSection(name, image.bytes, null, "application/octet-stream");
         }
     }
 }

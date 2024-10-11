@@ -50,8 +50,11 @@ namespace Lumpn.Discord
 
         internal Message Bake(List<ImageData> outImages)
         {
-            outImages.AddRange(images ?? emptyImages);
-            embeds = (embeds ?? emptyEmbeds).Select(p => p.Bake(outImages)).ToArray();
+            var sourceEmbeds = embeds ?? emptyEmbeds;
+            var sourceImages = images ?? emptyImages;
+
+            outImages.AddRange(sourceImages);
+            embeds = sourceEmbeds.Select(p => p.Bake(outImages)).ToArray();
             attachments = outImages.Select(CreateAttachment).ToArray();
             return this;
         }
