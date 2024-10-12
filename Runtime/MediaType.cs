@@ -11,5 +11,7 @@ namespace Lumpn.Discord
         PNG,
         WebP,
         GIF,
+        Text,
+        Zip,
     }
 }

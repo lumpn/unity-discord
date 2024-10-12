@@ -14,23 +14,23 @@ namespace Lumpn.Discord
             return Send(webhook, text, null);
         }
 
-        public static IEnumerator Send(this Webhook webhook, ImageData image)
+        public static IEnumerator Send(this Webhook webhook, FileData file)
         {
-            return Send(webhook, string.Empty, image);
+            return Send(webhook, string.Empty, file);
         }
 
-        public static IEnumerator Send(this Webhook webhook, string text, ImageData image)
+        public static IEnumerator Send(this Webhook webhook, string text, FileData file)
         {
-            return Send(webhook, text, new[] { image });
+            return Send(webhook, text, new[] { file });
         }
 
-        public static IEnumerator Send(this Webhook webhook, string text, ImageData[] images)
+        public static IEnumerator Send(this Webhook webhook, string text, FileData[] files)
         {
             var message = new Message
             {
                 username = webhook.name,
                 content = text,
-                images = images,
+                files = files,
             };
             return Send(webhook, message);
         }

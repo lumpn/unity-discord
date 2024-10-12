@@ -48,7 +48,8 @@ namespace Lumpn.Discord
 
         public static Embed SetThumbnail(this Embed embed, MediaType imageType, byte[] imageBytes)
         {
-            embed.thumbnail.image = ImageData.Create(imageType, imageBytes);
+            Debug.Assert(MediaTypeUtils.IsImage(imageType));
+            embed.thumbnail.file = FileData.Create(imageType, imageBytes);
             return embed;
         }
 
@@ -60,7 +61,8 @@ namespace Lumpn.Discord
 
         public static Embed SetImage(this Embed embed, MediaType imageType, byte[] imageBytes)
         {
-            embed.image.image = ImageData.Create(imageType, imageBytes);
+            Debug.Assert(MediaTypeUtils.IsImage(imageType));
+            embed.image.file = FileData.Create(imageType, imageBytes);
             return embed;
         }
 

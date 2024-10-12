@@ -123,6 +123,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &918754683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918754685}
+  - component: {fileID: 918754684}
+  m_Layer: 0
+  m_Name: ComplexMessageSender
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &918754684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918754683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f7774efd019f34dae5e5b13a8cfe5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webhookData: {fileID: 11400000, guid: c6d7c6f7ec2d5214a8f471ad3fcf4b08, type: 2}
+  color: {r: 0.9, g: 0.65999997, b: 0.17999998, a: 1}
+  title: Hello, World!
+  author: Alice
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  image: {fileID: 4900000, guid: 1f075d0f60fda714ca266d7d7c26305e, type: 3}
+  thumbnailUrl: https://i.imgur.com/wSTFkRM.png
+  footer: 'PS: Hi Bob!'
+--- !u!4 &918754685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918754683}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1367843232
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +271,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1508845095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508845097}
+  - component: {fileID: 1508845096}
+  m_Layer: 0
+  m_Name: AttachmentSender
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1508845096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508845095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb52a5a9b5f150428b08d4d81b2fd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webhookData: {fileID: 11400000, guid: c6d7c6f7ec2d5214a8f471ad3fcf4b08, type: 2}
+  text: Attachments! Attachments! Attachments!
+  image1: {fileID: 4900000, guid: 1f075d0f60fda714ca266d7d7c26305e, type: 3}
+  image2: {fileID: 4900000, guid: 5ad4fa7dd4e586f4e99ab1aeb72947e1, type: 3}
+  file1: {fileID: 4900000, guid: bc3279ac0108c3d4c9cdf736b68af3e5, type: 3}
+--- !u!4 &1508845097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508845095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938878942
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,37 +330,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1938878945}
   - component: {fileID: 1938878944}
-  - component: {fileID: 1938878943}
-  - component: {fileID: 1938878946}
   m_Layer: 0
-  m_Name: MessageSender
+  m_Name: SimpleMessageSender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1938878943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938878942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47f7774efd019f34dae5e5b13a8cfe5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  webhookData: {fileID: 11400000, guid: c6d7c6f7ec2d5214a8f471ad3fcf4b08, type: 2}
-  color: {r: 0.9, g: 0.65999997, b: 0.17999998, a: 1}
-  title: Hello, World!
-  author: Alice
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  image: {fileID: 4900000, guid: 1f075d0f60fda714ca266d7d7c26305e, type: 3}
-  thumbnailUrl: https://i.imgur.com/wSTFkRM.png
-  footer: 'PS: Hi Bob!'
 --- !u!114 &1938878944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,22 +366,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1938878946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938878942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cb52a5a9b5f150428b08d4d81b2fd6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  webhookData: {fileID: 11400000, guid: c6d7c6f7ec2d5214a8f471ad3fcf4b08, type: 2}
-  text: Attachments! Attachments! Attachments!
-  image1: {fileID: 4900000, guid: 1f075d0f60fda714ca266d7d7c26305e, type: 3}
-  image2: {fileID: 4900000, guid: 5ad4fa7dd4e586f4e99ab1aeb72947e1, type: 3}
 --- !u!1 &1985804696
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,3 +456,5 @@ SceneRoots:
   - {fileID: 1985804698}
   - {fileID: 1367843234}
   - {fileID: 1938878945}
+  - {fileID: 918754685}
+  - {fileID: 1508845097}

@@ -23,11 +23,11 @@ namespace Lumpn.Discord
         /// </summary>
         public string icon_url;
 
-        [NonSerialized] public ImageData icon;
+        [NonSerialized] public FileData iconFile;
 
-        internal Footer Bake(List<ImageData> outImages)
+        internal Footer Bake(List<FileData> outFiles)
         {
-            icon_url = ImageDataUtils.Bake(icon_url, icon, outImages);
+            icon_url = FileDataUtils.Bake(icon_url, iconFile, outFiles);
             return this;
         }
     }

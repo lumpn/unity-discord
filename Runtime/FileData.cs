@@ -6,23 +6,23 @@ using System.Globalization;
 
 namespace Lumpn.Discord
 {
-    public struct ImageData
+    public struct FileData
     {
         public MediaType type;
         public byte[] bytes;
 
-        public static ImageData Create(MediaType imageType, byte[] imageBytes)
+        public static FileData Create(MediaType fileType, byte[] fileBytes)
         {
-            return new ImageData
+            return new FileData
             {
-                type = imageType,
-                bytes = imageBytes,
+                type = fileType,
+                bytes = fileBytes,
             };
         }
 
-        public static implicit operator bool(ImageData image)
+        public static implicit operator bool(FileData file)
         {
-            return (image.type != MediaType.None);
+            return (file.type != MediaType.None);
         }
 
         internal string CreateURL(int id)

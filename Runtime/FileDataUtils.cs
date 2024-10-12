@@ -6,14 +6,14 @@ using System.Collections.Generic;
 
 namespace Lumpn.Discord
 {
-    public static class ImageDataUtils
+    public static class FileDataUtils
     {
-        internal static string Bake(string url, ImageData image, List<ImageData> outImages)
+        internal static string Bake(string url, FileData file, List<FileData> outFiles)
         {
-            if (image)
+            if (file)
             {
-                url = image.CreateURL(outImages.Count);
-                outImages.Add(image);
+                url = file.CreateURL(outFiles.Count);
+                outFiles.Add(file);
             }
             return url;
         }

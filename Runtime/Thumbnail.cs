@@ -18,11 +18,11 @@ namespace Lumpn.Discord
         /// </summary>
         public string url;
 
-        [NonSerialized] public ImageData image;
+        [NonSerialized] public FileData file;
 
-        internal Thumbnail Bake(List<ImageData> outImages)
+        internal Thumbnail Bake(List<FileData> outFiles)
         {
-            url = ImageDataUtils.Bake(url, image, outImages);
+            url = FileDataUtils.Bake(url, file, outFiles);
             return this;
         }
     }

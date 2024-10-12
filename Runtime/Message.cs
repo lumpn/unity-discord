@@ -41,25 +41,25 @@ namespace Lumpn.Discord
         [SerializeField] private Attachment[] attachments;
 
         /// <summary>
-        /// Attached images. (optional)
+        /// Attached files. (optional)
         /// </summary>
-        [NonSerialized] public ImageData[] images;
+        [NonSerialized] public FileData[] files;
 
         private static readonly Embed[] emptyEmbeds = new Embed[0];
-        private static readonly ImageData[] emptyImages = new ImageData[0];
+        private static readonly FileData[] emptyFiles = new FileData[0];
 
-        internal Message Bake(List<ImageData> outImages)
+        internal Message Bake(List<FileData> outFiles)
         {
             var sourceEmbeds = embeds ?? emptyEmbeds;
-            var sourceImages = images ?? emptyImages;
+            var sourceFiles = files ?? emptyFiles;
 
-            outImages.AddRange(sourceImages);
-            embeds = sourceEmbeds.Select(p => p.Bake(outImages)).ToArray();
-            attachments = outImages.Select(CreateAttachment).ToArray();
+            outFiles.AddRange(sourceFiles);
+            embeds = sourceEmbeds.Select(p => p.Bake(outFiles)).ToArray();
+            attachments = outFiles.Select(CreateAttachment).ToArray();
             return this;
         }
 
-        private static Attachment CreateAttachment(ImageData source, int id)
+        private static Attachment CreateAttachment(FileData source, int id)
         {
             return source.CreateAttachment(id);
         }

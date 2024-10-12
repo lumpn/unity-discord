@@ -25,7 +25,7 @@ namespace Lumpn.Discord
 
         public UnityWebRequest CreateWebRequest(Message message)
         {
-            var buffer = new List<ImageData>();
+            var buffer = new List<FileData>();
             var bakedMessage = message.Bake(buffer);
 
             var sections = new List<IMultipartFormSection>();
@@ -41,10 +41,10 @@ namespace Lumpn.Discord
             return new MultipartFormDataSection("payload_json", json, Encoding.UTF8, "application/json");
         }
 
-        private static MultipartFormFileSection CreateFileSection(ImageData image, int index)
+        private static MultipartFormFileSection CreateFileSection(FileData file, int index)
         {
             var name = string.Format(CultureInfo.InvariantCulture, "files[{0}]", index);
-            return new MultipartFormFileSection(name, image.bytes, null, "application/octet-stream");
+            return new MultipartFormFileSection(name, file.bytes, null, "application/octet-stream");
         }
     }
 }
